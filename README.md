@@ -1,8 +1,8 @@
 def quiz():
     questions = [
         {
-            "question": "What is the capital of France?",
-            "options": ["A. Berlin", "B. Madrid", "C. Paris", "D. Rome"],
+            "question": "What is the capital of India?",
+            "options": ["A. Chennai", "B. Chandigarh", "C. Delhi", "D. Hyderabad"],
             "correct": "C"
         },
         {
@@ -17,31 +17,30 @@ def quiz():
         }
     ]
     
-   score = 0
-     def ask_question(question_data):
+    score = 0  
+    
+    def ask_question(question_data):
         nonlocal score
         print("\n" + question_data["question"])
         for option in question_data["options"]:
             print(option)
-    
-  while True:
+        
+        while True:
             answer = input("Your answer (A, B, C, or D): ").strip().upper()
             if answer in ["A", "B", "C", "D"]:
                 break
             else:
                 print("Invalid input. Please enter A, B, C, or D.")
         
-        
-  if answer == question_data["correct"]:
+        if answer == question_data["correct"]:
             print("Correct!")
             score += 1
         else:
             print(f"Incorrect. The correct answer is {question_data['correct']}.")
-  
-  for question in questions:
+    
+    for question in questions:
         ask_question(question)
     
+    print(f"\nYour final score is {score}/{len(questions)}.")
     
-  print(f"\nYour final score is {score}/{len(questions)}.")
-  
 quiz()
